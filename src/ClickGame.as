@@ -98,18 +98,21 @@ package
 				returnArray.push( new TextField );
 				currentLength = returnArray.length - 1;
 				currentTextRect = tf.getCharBoundaries( i );
-				returnArray[ currentLength ].x = currentTextRect.x + adjustValue.x;
-				returnArray[ currentLength ].y = currentTextRect.y + adjustValue.y;
-				returnArray[ currentLength ].text = currentChar;
-				returnArray[ currentLength ].autoSize = TextFieldAutoSize.LEFT;
-				returnArray[ currentLength ].multiline = false;
-				returnArray[ currentLength ].mouseWheelEnabled = false;
-				returnArray[ currentLength ].embedFonts = tf.embedFonts;
-				returnArray[ currentLength ].type = tf.type;
-				returnArray[ currentLength ].selectable = tf.selectable;
-				returnArray[ currentLength ].antiAliasType = tf.antiAliasType;
-				returnArray[ currentLength ].defaultTextFormat = tf.defaultTextFormat;
-				returnArray[ currentLength ].setTextFormat( tf.getTextFormat( i, i+1 ) );
+				with( returnArray[ currentLength ] )
+				{
+					x = currentTextRect.x + adjustValue.x;
+					y = currentTextRect.y + adjustValue.y;
+					text = currentChar;
+					autoSize = TextFieldAutoSize.LEFT;
+					multiline = false;
+					mouseWheelEnabled = false;
+					embedFonts = tf.embedFonts;
+					type = tf.type;
+					selectable = tf.selectable;
+					antiAliasType = tf.antiAliasType;
+					defaultTextFormat = tf.defaultTextFormat;
+					setTextFormat( tf.getTextFormat( i, i+1 ) );
+				}
 			}
 			return returnArray;
 		}
