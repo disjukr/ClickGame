@@ -92,9 +92,8 @@ package
 			adjustValue.y = tf.y - currentTextRect.y;
 			for( var i:int; i<tf.length; ++i ) {
 				currentChar = tf.text.charAt( i );
-				if( currentChar == "\r" || ( splitSpace && ( currentChar == " " || currentChar == "\t" ) ) ) {
+				if( splitSpace && currentChar == " " )
 					continue;
-				}
 				returnArray.push( new TextField );
 				currentLength = returnArray.length - 1;
 				currentTextRect = tf.getCharBoundaries( i );
@@ -110,7 +109,6 @@ package
 					type = tf.type;
 					selectable = tf.selectable;
 					antiAliasType = tf.antiAliasType;
-					defaultTextFormat = tf.defaultTextFormat;
 					setTextFormat( tf.getTextFormat( i, i+1 ) );
 				}
 			}
