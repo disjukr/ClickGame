@@ -62,8 +62,8 @@ package
 				var dist3:Number = dist * dist * dist;
 				var fx:Number = factor / dist3 * dx;
 				var fy:Number = factor / dist3 * dy;
-				avoider.x = avoider.x + speed * ( cx + fx - avoider.x );
-				avoider.y = avoider.y + speed * ( cy + fy - avoider.y );
+				avoider.x += speed * ( cx + fx - avoider.x );
+				avoider.y += speed * ( cy + fy - avoider.y );
 			}
 			avoider.addEventListener( Event.ENTER_FRAME, avoid );
 		}
